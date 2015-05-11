@@ -1,23 +1,16 @@
 <h2 id="title">TODO App</h2>
 
-L
-{{#md-list}}
-  {{#each todos as |item|}}
-    {{#md-list-item class="md-3-line"}}
-      {{item.title}}
-    {{/md-list-item}}
-  {{/each}}
-{{/md-list}}
-l
-
 {{#each todos as |item|}}
-  {{#todo-item model=item}}
-    Contents: {{item.title}}
+  <!-- old syntax -->
+  {{#todo-item todo=item}}
+    <em>{{item.title}}</em>
   {{/todo-item}}
 
-  <!--todo-item model=item>
-    Contents: {{item.title}}
-  </todo-item-->
+  <!-- angle bracket syntax -->
+  <todo-item todo={{item}}>
+    <em>{{item.title}}</em>
+  </todo-item>
+  <br>
 {{/each}}
 
 {{outlet}}
